@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "baseUrl": ".",
+        "paths": { "*": ["types/*"]  },
+        "target": "es2016",
         "module": "commonjs",
         "declaration": true,
         "removeComments": true,
@@ -8,7 +10,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
-        "lib": ["es6", "dom"],
+        "lib": ["es2016"],
         "sourceMap": true,
         "pretty": true,
         "allowUnreachableCode": false,
@@ -22,6 +24,9 @@
     },
     "exclude": [
         "node_modules"
+    ],
+    "files": [
+        "./references.d.ts",
     ],
     "compileOnSave": false
 }

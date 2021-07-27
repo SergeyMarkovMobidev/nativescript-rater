@@ -4,12 +4,6 @@
     "description": "Reminds your app's users to review the app through PlayStore or AppStore. Love it, rate it!",
     "main": "rater",
     "typings": "index.d.ts",
-    "nativescript": {
-        "platforms": {
-            "android": "5.0.0",
-            "ios": "5.0.0"
-        }
-    },
     "scripts": {
         "tsc": "tsc",
         "build": "npm run tsc && npm run build.native",
@@ -61,11 +55,13 @@
         "cz-conventional-changelog": "^2.1.0",
         "prompt": "^1.0.0",
         "rimraf": "^2.6.2",
-        "semver": "^5.6.0",
-        "tns-core-modules": "^6.0.1",
-        "tns-platform-declarations": "^6.0.0",
+        "semver": "^7.3.5",
+        "@nativescript/core": "~8.0.0",
+        "@nativescript/android": "8.0.0",
+        "@nativescript/ios": "8.0.0",
+        "@nativescript/types": "~8.0.0",
         "tslint": "^5.11.0",
-        "typescript": "~2.8.2"
+        "typescript": "~4.1.5"
     },
     "dependencies": {},
     "bootstrapper": "nativescript-plugin-seed",

@@ -1,5 +1,5 @@
 import {AppRaterBase, AppRaterConfigs, defaultConfigs} from './rater.common';
-import * as application from 'tns-core-modules/application';
+import { Application } from '@nativescript/core';
 
 let _appRater: hotchemi.android.rate.AppRate;
 
@@ -11,12 +11,12 @@ function getAppRater(): Promise<hotchemi.android.rate.AppRate> {
         }
         else {
             const onLaunch = () => {
-                application.off(application.launchEvent, onLaunch);
-                _appRater = hotchemi.android.rate.AppRate.with(application.android.context);
-                return resolve(_appRater)
+                Application.off(Application.launchEvent, onLaunch);
+                _appRater = hotchemi.android.rate.AppRate.with(Application.android.context);
+                return resolve(_appRater);
             };
 
-            application.on(application.launchEvent, onLaunch);
+            Application.on(Application.launchEvent, onLaunch);
         }
     });
 }
@@ -89,7 +89,7 @@ export const appRater: AppRaterBase = {
         if (_appRater) {
             const result = _appRater.isDebug() || _appRater.shouldShowRateDialog();
             if (result) {
-                _appRater.showRateDialog(application.android.foregroundActivity);
+                _appRater.showRateDialog(Application.android.foregroundActivity);
             }
             return result;
         }
@@ -98,7 +98,7 @@ export const appRater: AppRaterBase = {
 
     showRateDialog() {
         if (_appRater) {
-            _appRater.showRateDialog(application.android.foregroundActivity);
+            _appRater.showRateDialog(Application.android.foregroundActivity);
         }
     },
 };
